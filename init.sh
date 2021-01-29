@@ -20,7 +20,7 @@ fi
 ########################
 
 
-if ! which docker; then
+if ! which docker >/dev/null; then
 	echo "Docker is required but not installed."
 	case "$OS" in
 	ubuntu|debian|fedora|centos)
@@ -31,7 +31,7 @@ if ! which docker; then
 	exit 1;
 fi
 
-if ! which docker-compose; then
+if ! which docker-compose >/dev/null; then
 	echo "Docker Compose (docker-compose) is required but not installed."
 	echo "Please follow the installation guide at https://docs.docker.com/compose/install/"
 	exit 1;
