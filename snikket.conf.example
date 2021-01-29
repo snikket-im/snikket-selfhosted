@@ -1,0 +1,12 @@
+# The domain of your Snikket instance
+SNIKKET_DOMAIN=example.com
+
+# The email address of the primary admin
+SNIKKET_ADMIN_EMAIL=admin@example.com
+
+# Confirm you agree to the Let's Encrypt
+# terms of service (required). Review the
+# document at:
+# https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf
+# If you agree to the terms, change N to Y
+SNIKKET_LETSENCRYPT_TOS_AGREE=N
