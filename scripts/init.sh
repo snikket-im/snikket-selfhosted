@@ -105,6 +105,6 @@ sed \
   snikket.conf.example > snikket.conf
 
 echo ""
-echo "Success"\!" Your configuration has been saved. You may now run ./start.sh"
+echo 'Success! Your configuration has been saved. You may now run ./start.sh'
 
 exit 0;
