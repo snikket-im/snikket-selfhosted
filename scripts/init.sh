@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-if test -f docker-compose.yml; then
+if [ -f docker-compose.yml ]; then
 	echo "You already have a docker-compose.yml."
 	echo "If you want to recreate it, please remove it first and re-run this command"
 	exit 1;
@@ -39,7 +39,7 @@ fi
 
 cp docker-compose.base.yml docker-compose.yml
 
-if test -f snikket.conf; then
+if [ -f snikket.conf ]; then
 	echo "It appears you already have a snikket.conf file"
 	echo -n "Would you like to keep the existing file? [Y/n] "
 	read -r -n1 -p "" remove_existing_config

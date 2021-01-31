@@ -12,7 +12,7 @@ if [[ "$1" != /* ]]; then
 	exit 1;
 fi
 
-if ! test -d "$1"; then
+if [ ! -d "$1" ]; then
 	echo "The provided destination directory does not exist: $1";
 	exit 1;
 fi

@@ -12,7 +12,7 @@ if [[ "$1" != /* ]]; then
 	exit 1;
 fi
 
-if ! test -f "$1"; then
+if [ ! -f "$1" ]; then
 	echo "The requested backup file does not exist: $1";
 	exit 1;
 fi
