@@ -7,4 +7,4 @@ if [[ -z "$SNIKKET_DOMAIN" ]]; then
 	exit 1;
 fi
 
-exec docker exec -it snikket prosodyctl mod_invites generate "$SNIKKET_DOMAIN" $*
+exec docker exec -it snikket prosodyctl mod_invites generate "$SNIKKET_DOMAIN" "$@"
