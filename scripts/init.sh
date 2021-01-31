@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-if test -f docker-compose.yml; then
+if [ -f docker-compose.yml ]; then
 	echo "You already have a docker-compose.yml."
 	echo "If you want to recreate it, please remove it first and re-run this command"
 	exit 1;
@@ -39,10 +39,10 @@ fi
 
 cp docker-compose.base.yml docker-compose.yml
 
-if test -f snikket.conf; then
+if [ -f snikket.conf ]; then
 	echo "It appears you already have a snikket.conf file"
 	echo -n "Would you like to keep the existing file? [Y/n] "
-	read -n1 -p "" remove_existing_config
+	read -r -n1 -p "" remove_existing_config
 	case "$remove_existing_config" in
 	n|N) rm snikket.conf ;;
 	*) exit 0 ;;
@@ -65,7 +65,7 @@ echo "It must be a domain you own, with DNS records for this"
 echo "server's IP address. The domain/subdomain you enter will be"
 echo "dedicated to Snikket, and cannot be shared with e.g. a website."
 echo ""
-read -p "Enter domain: " SNIKKET_DOMAIN
+read -r -p "Enter domain: " SNIKKET_DOMAIN
 
 echo ""
 echo ""
@@ -74,7 +74,7 @@ echo "of the $SNIKKET_DOMAIN service in case they require assistance."
 echo "It is also provided to Let's Encrypt, an organization that issues"
 echo "SSL/TLS certificates required for Snikket to encrypt connections."
 echo ""
-read -p "Enter admin email address: " SNIKKET_ADMIN_EMAIL
+read -r -p "Enter admin email address: " SNIKKET_ADMIN_EMAIL
 
 echo ""
 echo ""
@@ -82,7 +82,7 @@ echo "Finally, please confirm that you accept the Let's Encrypt terms"
 echo "of service, which can be reviewed at:"
 echo "https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf"
 echo ""
-read -n1 -p "Enter 'Y' to confirm: " SNIKKET_LETSENCRYPT_TOS_AGREE
+read -r -n1 -p "Enter 'Y' to confirm: " SNIKKET_LETSENCRYPT_TOS_AGREE
 echo ""
 
 case "$SNIKKET_LETSENCRYPT_TOS_AGREE" in
@@ -105,6 +105,6 @@ sed \
   snikket.conf.example > snikket.conf
 
 echo ""
-echo "Success"\!" Your configuration has been saved. You may now run ./start.sh"
+echo 'Success! Your configuration has been saved. You may now run ./start.sh'
 
 exit 0;
