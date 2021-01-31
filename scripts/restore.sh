@@ -25,7 +25,7 @@ fi
 echo    "WARNING: This will replace all data currently in the $CONTAINER container"
 echo    "         with the contents of the provided backup. If you continue, existing"
 echo -n "         data in the container will be lost. Continue? [y/N] "
-read -n1 -p "" continue_answer
+read -r -n1 -p "" continue_answer
 
 case "$continue_answer" in
 y|Y) echo "Ok, proceeding..." ;;
