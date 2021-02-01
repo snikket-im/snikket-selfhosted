@@ -32,7 +32,7 @@ Check that your Snikket login page loads at `http://<your domain>/`
 To create your first account, create an invitation with:
 
 ```
-./scripts/new-invite.sh --admin
+./scripts/new-invite.sh --admin --group default
 ```
 
 Open the link in a browser. If you are on a desktop, you can use
