@@ -1,10 +1,22 @@
 # snikket-selfhosted
-Setup and resources for self-hosting your Snikket service!
+
+This repository includes some helpful scripts and templates
+for setting up and managing a Snikket service.
+
+It is relatively new, so if you use it feel free to give us
+feedback!
 
 ## Setup instructions
-_Ensure that you have the latest version of Docker and docker-compose installed_
 
-_Add 'sudo' before each command if using a non root user_
+Before you begin, you need to follow Step 1 (DNS) and Step 2
+(Docker) from the [Quickstart](https://snikket.org/service/quickstart/)
+tutorial.
+
+Instead of Step 3 in the quickstart, you can follow the instructions
+here.
+
+Don't forget to run the commands as root (log in as root or use sudo).
+
 ### Step 1: Fetch the source
 
 ```
