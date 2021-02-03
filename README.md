@@ -2,7 +2,9 @@
 Setup and resources for self-hosting your Snikket service!
 
 ## Setup instructions
+_Ensure that you have the latest version of Docker and docker-compose installed_
 
+_Add 'sudo' before each command if using a non root user_
 ### Step 1: Fetch the source
 
 ```
@@ -15,6 +17,7 @@ git clone https://github.com/snikket-im/snikket-selfhosted snikket
 An automatic configuration script is included:
 
 ```
+cd snikket
 ./scripts/init.sh
 ```
 
