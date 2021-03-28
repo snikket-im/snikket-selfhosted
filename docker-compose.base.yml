@@ -24,7 +24,10 @@ services:
     network_mode: host
     env_file: snikket.conf
     restart: "unless-stopped"
-
+    environment:
+      # Do not expose the HTTP server inside the container to the outside
+      # world (see use of network_mode: host above).
+      - SNIKKET_TWEAK_PORTAL_INTERNAL_HTTP_INTERFACE=127.0.0.1
   snikket_server:
     container_name: snikket
     image: snikket/snikket-server:beta
