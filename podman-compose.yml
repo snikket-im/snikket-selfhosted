@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: snikket
+spec:
+  containers:
+  - name: proxy
+    image: docker.io/snikket/snikket-web-proxy:beta
+    envFrom:
+    - configMapRef:
+        name: snikket_settings
+        optional: false
+    volumeMounts:
+    - name: snikket_data
+      mountPath: /snikket
+    - name: acme_challenges
+      mountPath: /var/www/html/.well-known/acme-challenge
+  - name: certs
+    image: docker.io/snikket/snikket-cert-manager:beta
+    envFrom:
+    - configMapRef:
+        name: snikket_settings
+        optional: false
+    volumeMounts:
+    - name: snikket_data
+      mountPath: /snikket
+    - name: acme_challenges
+      mountPath: /var/www/.well-known/acme-challenge
+  - name: portal
+    image: docker.io/snikket/snikket-web-portal:beta
+    envFrom:
+    - configMapRef:
+        name: snikket_settings
+        optional: false
+  - name: server
+    image: docker.io/snikket/snikket-server:beta
+    envFrom:
+    - configMapRef:
+        name: snikket_settings
+        optional: false
+    volumeMounts:
+    - name: snikket_data
+      mountPath: /snikket
+  hostNetwork: true
+  volumes:
+  - name: snikket_data
+    PersistentVolumeClaim:
+      claimName: snikket-data
+  - name: acme_challenges
+    PersistentVolumeClaim:
+      claimName: snikket-acme-challenges
