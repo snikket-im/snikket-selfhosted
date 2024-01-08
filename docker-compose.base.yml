@@ -14,6 +14,7 @@ services:
     container_name: snikket-certs
     image: snikket/snikket-cert-manager:beta
     env_file: snikket.conf
+    network_mode: host
     volumes:
       - snikket_data:/snikket
       - acme_challenges:/var/www/.well-known/acme-challenge
