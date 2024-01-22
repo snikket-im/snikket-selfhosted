@@ -32,7 +32,7 @@ y|Y) echo "Ok, proceeding..." ;;
 *) echo "Aborting."; exit 1 ;;
 esac
 
-exec docker run \
+exec podman run \
   --rm \
   --volumes-from=snikket \
   --mount type=bind,source="$1",destination=/backup.tar.gz \

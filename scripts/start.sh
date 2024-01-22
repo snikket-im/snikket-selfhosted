@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ ! -f docker-compose.yml ]; then
+if [ ! -f podman-compose.yml ]; then
 	echo 'Almost there! You need to run ./init.sh first :)'
 	exit 1;
 fi
 
-exec docker-compose up -d
+exec podman play kube --configmap=snikket-settings.yml podman-compose.yml

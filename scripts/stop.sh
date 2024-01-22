@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec docker-compose down
+exec podman pod rm -f snikket

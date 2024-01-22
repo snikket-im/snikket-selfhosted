@@ -17,4 +17,4 @@ if [ ! -d "$1" ]; then
 	exit 1;
 fi
 
-exec docker run --rm --volumes-from=snikket -v "$1":/backup debian:buster-slim tar czf /backup/snikket-"$(date +%F-%R)".tar.gz /snikket
+exec podman run --rm --volumes-from=snikket-server -v "$1":/backup debian:buster-slim tar czf /backup/snikket-"$(date +%F-%R)".tar.gz /snikket
