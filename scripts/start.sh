@@ -5,4 +5,4 @@ if [ ! -f docker-compose.yml ]; then
 	exit 1;
 fi
 
-exec docker-compose up -d
+exec docker compose up -d

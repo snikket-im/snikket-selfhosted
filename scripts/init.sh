@@ -31,9 +31,9 @@ if ! which docker >/dev/null; then
 	exit 1;
 fi
 
-if ! which docker-compose >/dev/null; then
-	echo "Docker Compose (docker-compose) is required but not installed."
-	echo "Please follow the installation guide at https://docs.docker.com/compose/install/"
+if ! docker help compose >/dev/null; then
+	echo "Docker Compose extension is required, but not installed."
+	echo "Please follow the installation guide at https://docs.docker.com/compose/install/linux/#install-using-the-repository"
 	exit 1;
 fi
 

@@ -1,10 +1,15 @@
 # snikket-selfhosted
 
 This repository includes some helpful scripts and templates
-for setting up and managing a Snikket service.
+for setting up and managing a Snikket service, as an alternative to the
+official [Snikket setup guide](https://snikket.org/quickstart).
 
-It is relatively new, so if you use it feel free to give us
-feedback!
+If you use the scripts here, feel free to send us feedback or contributions to
+help improve them!
+
+**Note:** These scripts now require Docker Compose V2, and won't work with the
+V1 'docker-compose' command that some servers may still have installed. If you
+need to upgrade, follow [Docker's installation guide for Compose V2](https://docs.docker.com/compose/install/linux/#install-using-the-repository).
 
 ## Setup instructions
 
